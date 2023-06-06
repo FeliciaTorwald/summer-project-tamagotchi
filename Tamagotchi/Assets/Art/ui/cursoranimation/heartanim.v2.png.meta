@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf08a8cd6501b2847b43c6549469f0f0
+guid: dfe8a097f5eaa444099c9cab4aff9bf0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle pet-Sheet_0
+      name: heartanim.v2_0
       rect:
         serializedVersion: 2
-        x: 279
-        y: 115
-        width: 306
-        height: 265
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9f44959c13dc042bbd8cd227adacc1
-      internalID: -852200255
+      spriteID: 474ca72e9e20c444f8fd34a707ed8eb1
+      internalID: 596180254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_1
+      name: heartanim.v2_1
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 115
-        width: 306
-        height: 265
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26a064c585207694a95c03951206406f
-      internalID: -1524602111
+      spriteID: efbffcff7cc06c74a9dd63a722c3d792
+      internalID: 733540841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_2
+      name: heartanim.v2_2
       rect:
         serializedVersion: 2
-        x: 2867
-        y: 115
-        width: 306
-        height: 264
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610615f49488c6144b0bfe7164078763
-      internalID: 97917717
+      spriteID: fe76804cf97664c46b539abcf69dc5b5
+      internalID: -1060529379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_3
+      name: heartanim.v2_3
       rect:
         serializedVersion: 2
-        x: 4161
-        y: 115
-        width: 306
-        height: 265
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38d89eee8b8b1ba41a500228b7cb31a8
-      internalID: -1812298511
+      spriteID: e4ed53b03ac7cc14cb64ba1205d83f53
+      internalID: 228066649
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle pet-Sheet_3: -1812298511
-      idle pet-Sheet_0: -852200255
-      idle pet-Sheet_2: 97917717
-      idle pet-Sheet_1: -1524602111
+      heartanim.v2_2: -1060529379
+      heartanim.v2_0: 596180254
+      heartanim.v2_1: 733540841
+      heartanim.v2_3: 228066649
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
