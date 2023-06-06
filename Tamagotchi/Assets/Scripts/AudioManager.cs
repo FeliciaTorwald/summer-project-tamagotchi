@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
         {
             Load();
         }
+        volumeSlider.onValueChanged.AddListener(delegate { ChangeVolume(); });
     }
 
     public void ChangeVolume()

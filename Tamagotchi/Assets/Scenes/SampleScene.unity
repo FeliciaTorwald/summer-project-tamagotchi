@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000015258789, y: 2}
+  m_AnchoredPosition: {x: 0.000015258789, y: 2}
   m_SizeDelta: {x: 38.53, y: 14.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173720154
@@ -284,8 +284,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1684158462}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: ChangeSong
-        m_Mode: 3
+        m_MethodName: NextSong
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -294,8 +294,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1684158466}
-        m_TargetAssemblyTypeName: MusicSlider, Assembly-CSharp
+      - m_Target: {fileID: 1684158462}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: ResetTimer
         m_Mode: 1
         m_Arguments:
@@ -529,7 +529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -3.75, y: 0}
+  m_AnchoredPosition: {x: 3.75, y: 0}
   m_SizeDelta: {x: -2.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &727144572
@@ -766,7 +766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829199610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1684158462}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: PreviousSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829199610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,7 +1884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.2500076, y: 0}
+  m_AnchoredPosition: {x: 6.2500076, y: 0}
   m_SizeDelta: {x: -7.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1536073986
@@ -1992,7 +2004,6 @@ GameObject:
   - component: {fileID: 1684158462}
   - component: {fileID: 1684158464}
   - component: {fileID: 1684158465}
-  - component: {fileID: 1684158466}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -2021,9 +2032,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0b6828a90f0afe445b493a0b726f44e4, type: 3}
   - {fileID: 8300000, guid: ef9477b85f073d24883008357dba3039, type: 3}
   - {fileID: 8300000, guid: 332324baefc69d74e98f5748dd16a724, type: 3}
-  trackTimer: 0
   songsPlayed: 0
   beenPlayed: 
+  slider: {fileID: 2059961688}
+  gameTime: 0
+  stopTimer: 0
+  time: 0
 --- !u!4 &1684158463
 Transform:
   m_ObjectHideFlags: 0
@@ -2143,22 +2157,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684158461}
   m_Enabled: 1
---- !u!114 &1684158466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684158461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac2718ed65da964aa6c65432834fe2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 2059961688}
-  gameTime: 125
-  stopTimer: 0
-  time: 0
 --- !u!1 &1895750736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,7 +2268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
   m_SizeDelta: {x: -0.000030518, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055827678
@@ -2394,7 +2392,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 173720154}
   m_FillRect: {fileID: 451507456}
   m_HandleRect: {fileID: 173720153}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0

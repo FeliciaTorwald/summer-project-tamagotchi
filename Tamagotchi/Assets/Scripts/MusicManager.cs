@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
@@ -11,10 +13,17 @@ public class MusicManager : MonoBehaviour
     }
     private AudioSource audiosource;
     public AudioClip[] songs;
-    [SerializeField] private float trackTimer;
     [SerializeField] private float songsPlayed;
     [SerializeField] private bool[] beenPlayed;
     private bool playing;
+
+    public Slider slider;
+    public float gameTime;
+    public bool stopTimer;
+    public float time;
+
+    private Stack<int> played = new Stack<int>();
+    private int currentSong;
 
     private void Awake()
     {
@@ -33,76 +42,110 @@ public class MusicManager : MonoBehaviour
 
         if (!audiosource.isPlaying)
         {
-            ChangeSong(Random.Range(0, songs.Length));
+            ChangeSong(Random.Range(0, songs.Length), true);
         }
+
+        stopTimer = false;
+        slider.maxValue = audiosource.clip.length;
+        slider.onValueChanged.AddListener(delegate { SliderChanged(); });
+
     }
 
     private void Update()
     {
-        if (playing == false || trackTimer >= audiosource.clip.length)
+        if (playing == false || audiosource.time >= audiosource.clip.length)
         {
             ChangeSong(Random.Range(0, songs.Length));
         }
 
-        if (playing == true)
-        {
-            trackTimer += 1 * Time.deltaTime;
-        }
 
-        ResetShuffle();
+        if (stopTimer == false)
+        {
+            slider.value = time;
+            time = gameTime - Time.time;//change this to delta time, time.time checks when the application starts
+            //time = gameTime - Time.deltaTime;//what the heck its barely changing
+            //timeRemaining -= Time.deltaTime;
+
+        }
+        if (time <= 0)
+        {
+            stopTimer = true;
+        }
+        slider.value = audiosource.time;
     }
 
 
-    public void ChangeSong(int songPicked)
+    public void ChangeSong(int songPicked, bool previous = false)
     {
-        if (!beenPlayed[songPicked])
+        if (previous == false)
         {
-            trackTimer = 0;
-            songsPlayed++;
-            beenPlayed[songPicked] = true;
-            audiosource.clip = songs[songPicked];
-            audiosource.Play();
-            playing = true;
+            played.Push(currentSong);
         }
-        else
-        {
-            audiosource.Stop();
-            playing = false;
-        }
+        songsPlayed++;
+        beenPlayed[songPicked] = true;
+        audiosource.clip = songs[songPicked];
+        currentSong = songPicked;
+        audiosource.Play();
+        playing = true;
 
     }
     public void PauseSong()
     {
         audiosource.Pause();
-        trackTimer = 0;
     }
 
     public void PlaySong()
     {
         audiosource.Play();
-        trackTimer = 0;
     }
 
     public void PreviousSong()
     {
-        
+        if (played.Count > 0)
+        {
+            ChangeSong(played.Pop(), true);
+        }
     }
 
-
-    public void ResetShuffle()
+    public void NextSong()
     {
-
-        if (songsPlayed == songs.Length)
+        int selectedSong = Random.Range(0, songs.Length);
+        int counter = 0;
+        while (beenPlayed[selectedSong])
         {
-            songsPlayed = 0;
-            for (int i = 0; i < songs.Length; i++)
+            selectedSong = Random.Range(0, songs.Length);
+            counter++;
+            if (counter >= 100)
             {
-                if (i == songs.Length)
-                    break;
-                else
-                    beenPlayed[i] = false;
+                ResetShuffle();
             }
         }
+        ChangeSong(selectedSong, false);
+    }
+    public void ResetShuffle()
+    {
+        songsPlayed = 0;
+        for (int i = 0; i < songs.Length; i++)
+        {
+            if (i == songs.Length)
+                break;
+            else
+                beenPlayed[i] = false;
+        }
+    }
 
+    public void ResetTimer()
+    {
+        stopTimer = true;
+        Invoke("StartTimer", 0.5f);
+    }
+
+    void SliderChanged()
+    {
+        audiosource.time = slider.value;
+    }
+    public void StartTimer()
+    {
+        stopTimer = false;
     }
 }

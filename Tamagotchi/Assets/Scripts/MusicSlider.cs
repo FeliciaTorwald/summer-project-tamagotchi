@@ -11,13 +11,15 @@ public class MusicSlider : MonoBehaviour
     public bool stopTimer;
     private AudioSource audioSource;
     public float time;
+    float timeRemaining;
 
     private void Start()
     {
+        timeRemaining = gameTime;
         audioSource = GetComponent<AudioSource>();
         stopTimer = false;
-        slider.maxValue = gameTime;
-        slider.value = gameTime;
+        slider.maxValue = audioSource.clip.length;
+
     }
     private void Update()
     {
@@ -26,6 +28,8 @@ public class MusicSlider : MonoBehaviour
             slider.value = time;
             time = gameTime - Time.time;//change this to delta time, time.time checks when the application starts
             //time = gameTime - Time.deltaTime;//what the heck its barely changing
+            //timeRemaining -= Time.deltaTime;
+
         }
         if (time <= 0)
         {
