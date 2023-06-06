@@ -18,8 +18,6 @@ public class MusicManager : MonoBehaviour
     private bool playing;
 
     public Slider slider;
-    public float gameTime;
-    public bool stopTimer;
     public float time;
 
     private Stack<int> played = new Stack<int>();
@@ -45,7 +43,6 @@ public class MusicManager : MonoBehaviour
             ChangeSong(Random.Range(0, songs.Length), true);
         }
 
-        stopTimer = false;
         slider.maxValue = audiosource.clip.length;
         slider.onValueChanged.AddListener(delegate { SliderChanged(); });
 
@@ -58,19 +55,6 @@ public class MusicManager : MonoBehaviour
             ChangeSong(Random.Range(0, songs.Length));
         }
 
-
-        if (stopTimer == false)
-        {
-            slider.value = time;
-            time = gameTime - Time.time;//change this to delta time, time.time checks when the application starts
-            //time = gameTime - Time.deltaTime;//what the heck its barely changing
-            //timeRemaining -= Time.deltaTime;
-
-        }
-        if (time <= 0)
-        {
-            stopTimer = true;
-        }
         slider.value = audiosource.time;
     }
 
@@ -87,7 +71,8 @@ public class MusicManager : MonoBehaviour
         currentSong = songPicked;
         audiosource.Play();
         playing = true;
-
+        slider.value = 0;
+        slider.maxValue = audiosource.clip.length;
     }
     public void PauseSong()
     {
@@ -133,19 +118,10 @@ public class MusicManager : MonoBehaviour
                 beenPlayed[i] = false;
         }
     }
-
-    public void ResetTimer()
-    {
-        stopTimer = true;
-        Invoke("StartTimer", 0.5f);
-    }
-
+    
     void SliderChanged()
     {
         audiosource.time = slider.value;
     }
-    public void StartTimer()
-    {
-        stopTimer = false;
-    }
+    
 }
