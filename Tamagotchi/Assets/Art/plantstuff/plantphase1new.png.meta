@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf08a8cd6501b2847b43c6549469f0f0
+guid: 30f208b82e34ad84b8eb3d5434146c79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 16384
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle pet-Sheet_0
+      name: plantphase1new_0
       rect:
         serializedVersion: 2
-        x: 279
-        y: 115
-        width: 306
-        height: 265
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9f44959c13dc042bbd8cd227adacc1
-      internalID: -852200255
+      spriteID: a2a550a8902cf7143adf3c2b443cfb73
+      internalID: -2074226728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_1
+      name: plantphase1new_1
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 115
-        width: 306
-        height: 265
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26a064c585207694a95c03951206406f
-      internalID: -1524602111
+      spriteID: cf010dd949933964db803a0fd95cc87b
+      internalID: -661963492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_2
+      name: plantphase1new_2
       rect:
         serializedVersion: 2
-        x: 2867
-        y: 115
-        width: 306
-        height: 264
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610615f49488c6144b0bfe7164078763
-      internalID: 97917717
+      spriteID: a4afd6171181ddf4896f2e09205b5065
+      internalID: 135873889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle pet-Sheet_3
+      name: plantphase1new_3
       rect:
         serializedVersion: 2
-        x: 4161
-        y: 115
-        width: 306
-        height: 265
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38d89eee8b8b1ba41a500228b7cb31a8
-      internalID: -1812298511
+      spriteID: 8950fb8ed32f26f4fba14fc703c5842a
+      internalID: 1160569814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantphase1new_4
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9b2a6999c2ac64a9f84581af863d3c
+      internalID: -1233242662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantphase1new_5
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f2a4bd42d18134a9bb43c2d5762265
+      internalID: -902221610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantphase1new_6
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbef92bc38742174c872ceb256cfc00e
+      internalID: -1705289563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantphase1new_7
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6367eaf369c394d97a58561a0ca30f
+      internalID: 126700333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantphase1new_8
+      rect:
+        serializedVersion: 2
+        x: 11264
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb9ec192dd3f6145907444fe6171bc5
+      internalID: 725030830
       vertices: []
       indices: 
       edges: []
@@ -223,10 +328,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle pet-Sheet_3: -1812298511
-      idle pet-Sheet_0: -852200255
-      idle pet-Sheet_2: 97917717
-      idle pet-Sheet_1: -1524602111
+      plantphase1new_0: -2074226728
+      plantphase1new_2: 135873889
+      plantphase1new_3: 1160569814
+      plantphase1new_6: -1705289563
+      plantphase1new_4: -1233242662
+      plantphase1new_8: 725030830
+      plantphase1new_7: 126700333
+      plantphase1new_5: -902221610
+      plantphase1new_1: -661963492
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
