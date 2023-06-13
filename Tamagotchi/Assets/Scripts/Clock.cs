@@ -9,7 +9,7 @@ public class Clock : MonoBehaviour
 {
     public TMP_Text clockText;
 
-    private void Awake()
+    private void FixedUpdate()
     {
         DateTime time = DateTime.Now;
         string hour = LeadingZero(time.Hour);
