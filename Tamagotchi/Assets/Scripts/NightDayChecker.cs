@@ -9,8 +9,8 @@ public class NightDayChecker : MonoBehaviour
 {
     public GameObject nightBackground;
     public GameObject dayBackground;
-    // Start is called before the first frame update
-    void FixedUpdate()
+
+    void Update()
     {
         DateTime time = DateTime.Now;
         if(time.Hour > 17 || time.Hour < 11)
@@ -24,11 +24,5 @@ public class NightDayChecker : MonoBehaviour
             nightBackground.gameObject.SetActive(false);
         }
        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
