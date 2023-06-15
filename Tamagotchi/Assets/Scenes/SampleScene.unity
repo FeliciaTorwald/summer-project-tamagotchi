@@ -417,6 +417,8 @@ MonoBehaviour:
   icons: []
   maxHunger: 5
   hunger: 0
+  counter: 0
+  currentHunger: 0
 --- !u!114 &267711273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +544,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 267711272}
+        m_TargetAssemblyTypeName: UIHunger, Assembly-CSharp
+        m_MethodName: GetHungry
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2038,7 +2052,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 267711272}
         m_TargetAssemblyTypeName: UIHunger, Assembly-CSharp
-        m_MethodName: GetHungry
+        m_MethodName: DecreaseHunger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3593,6 +3607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1536073987}
+  uiHunger: {fileID: 267711272}
 --- !u!61 &1536073993
 BoxCollider2D:
   m_ObjectHideFlags: 0
