@@ -28,7 +28,6 @@ public class UIHunger : MonoBehaviour
     void Start()
     {
         hunger = maxHunger;
-        //hunger = currentHunger;
         HungerTaken += UpdateIcons;
         currentHunger = PlayerPrefs.GetInt("Last Hunger");
 
@@ -37,6 +36,7 @@ public class UIHunger : MonoBehaviour
             GameObject iconObject = Instantiate(icon, this.transform);
             icons.Add(iconObject.GetComponent<Image>());
         }
+
         lastTimePlayed = DateTime.Parse(PlayerPrefs.GetString("Last Time Played"));
         TimeSpan difference = DateTime.Now.Subtract(lastTimePlayed);
         lastHungerTick = DateTime.Now;
@@ -47,6 +47,7 @@ public class UIHunger : MonoBehaviour
     }
     private void Update()
     {
+        UpdateIcons();
         TimeSpan difference = DateTime.Now.Subtract(lastHungerTick);
         if(difference.Minutes > 0)
         {
@@ -54,10 +55,6 @@ public class UIHunger : MonoBehaviour
             hunger = (int)MathF.Max(0, hunger);
             GetHungry();
         }
-        ////currentHunger = icons.Count;//TODO save current heart and show at next start;
-
-        
-
     }
 
     public void GetHungry()

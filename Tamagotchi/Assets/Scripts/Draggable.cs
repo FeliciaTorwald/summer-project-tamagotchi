@@ -7,6 +7,8 @@ public class Draggable : MonoBehaviour
 {
     Vector3 mousePositionOffset;
     Rigidbody2D rigidbody2d;
+    Vector3 firstFrameHeld;
+    Vector3 lastFrameHeld;
 
     private void Start()
     {
@@ -20,16 +22,22 @@ public class Draggable : MonoBehaviour
     private void OnMouseDown()
     {
         mousePositionOffset = gameObject.transform.position - GetMousePosition();
+        firstFrameHeld = gameObject.transform.position;
     }
 
     private void OnMouseDrag()
     {
+        lastFrameHeld = gameObject.transform.position;
         transform.position = GetMousePosition() + mousePositionOffset;
     }
     private void OnMouseUp()
     {
-        Vector3 force = new Vector3(Random.Range(-5, 5),0,0);
-        rigidbody2d.AddForce(force, ForceMode2D.Impulse);
+        //float distance = Vector3.Distance(lastFrameHeld, firstFrameHeld);
+        //Vector3 force = transform.forward * distance;
+        //Vector3 force = GetMousePosition() - lastFrameHeld;
+        Vector3 force = lastFrameHeld - firstFrameHeld;
+        //Vector3 force = new Vector3(Random.Range(-5, 5),0,0);
+        rigidbody2d.AddForce(force * 2, ForceMode2D.Impulse);
     }
 
 }
