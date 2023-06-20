@@ -18,6 +18,8 @@ public class Tarotcards : MonoBehaviour
 
     public bool win;
 
+    public MoneyCounter moneyCounter;
+
 
     public void PickCard()
     {
@@ -38,8 +40,8 @@ public class Tarotcards : MonoBehaviour
         }
 
         counter++;
-        WinningCheck();
         RemoveCard();
+        WinningCheck();
     }
 
     public void RemoveCard()
@@ -72,14 +74,23 @@ public class Tarotcards : MonoBehaviour
         if(whiteCounter == 3)
         {
             win = true;
+            //moneyCounter.AddMoneyToCounter();
         }
         if (blueCounter == 3)
         {
             win = true;
+            //moneyCounter.AddMoneyToCounter();
         }
         if (yellowCounter == 3)
         {
             win = true;
+            //moneyCounter.AddMoneyToCounter();
+        }
+
+        if (win == true)
+        {
+            moneyCounter.AddMoneyToCounter();
+            win = false;
         }
     }
 }

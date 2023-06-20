@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5014726246717789610}
   - component: {fileID: 3449473721652417484}
+  - component: {fileID: 5266927366569330787}
   m_Layer: 0
   m_Name: YellowCard_0
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5266927366569330787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437030161468373870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21dd9d7e94ec9c4e92223a2eaece02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfTarot: 2
