@@ -14,8 +14,14 @@ public class MoneyCounter : MonoBehaviour
     }
     public void AddMoneyToCounter()
     {
-        money += 1;
+        money += 10;
         
+        goldText.text = string.Format("{0:000}", money);
+    }
+    public void DecreaseMoneyToCounter()
+    {
+        money -= 1;
+
         goldText.text = string.Format("{0:000}", money);
     }
 

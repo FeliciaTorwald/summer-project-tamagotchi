@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class EmotionalState : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
 
-
+    private void Start()
+    {
+       animator =  GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
