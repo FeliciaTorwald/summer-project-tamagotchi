@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Ball
+  - Teddy
   layers:
   - Default
   - TransparentFX

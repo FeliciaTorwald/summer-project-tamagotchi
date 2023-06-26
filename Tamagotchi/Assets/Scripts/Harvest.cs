@@ -18,7 +18,7 @@ public class Harvest : MonoBehaviour
 
     public void Patience()
     {
-        Invoke("Spawn", 7.5f);
+        Invoke("Spawn", 7f);
     }
 
     public void Destroy()
