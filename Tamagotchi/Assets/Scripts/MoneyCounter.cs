@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -8,9 +9,23 @@ public class MoneyCounter : MonoBehaviour
 {
     public TextMeshProUGUI goldText;
     public int money;
+    public GameObject coin;
+    public Transform goldCounter;
+    public Transform gachaMachine;
+    bool flying;
+
     private void Start()
     {
         Load();
+    }
+    private void Update()
+    {
+        if(flying)
+        {
+            GameObject spawnedCoin = Instantiate(coin);
+
+
+        }
     }
     public void AddMoneyToCounter()
     {

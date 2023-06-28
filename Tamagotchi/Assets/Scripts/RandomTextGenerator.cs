@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.iOS;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class RandomTextGenerator : MonoBehaviour
@@ -14,10 +15,19 @@ public class RandomTextGenerator : MonoBehaviour
     [SerializeField] private float textRead;
     private int counter;
     string randomText;
+    public Animator animator;
+    public GameObject notice;
 
     void Start()
     {
         beenRead = new bool[messages.Length];
+        Invoke("Explosion", 0.9f);
+    }
+
+    private void Explosion()
+    {
+        animator.SetTrigger("explode");
+        notice.SetActive(true);
     }
     public void GenerateRandomText()
     {
