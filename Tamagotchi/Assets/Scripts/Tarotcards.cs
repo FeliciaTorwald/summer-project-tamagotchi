@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Tarotcards : MonoBehaviour
@@ -10,6 +11,7 @@ public class Tarotcards : MonoBehaviour
     public List<GameObject> pickedUpCards = new List<GameObject>();
 
     private GameObject pickedCard;
+    public TextMeshProUGUI winText;
 
     public int counter;
     public int whiteCounter;
@@ -63,6 +65,7 @@ public class Tarotcards : MonoBehaviour
                 whiteCounter = 0;
                 blueCounter = 0;
                 yellowCounter = 0;
+                winText.text = string.Format("");
             }
         }
     }
@@ -90,6 +93,7 @@ public class Tarotcards : MonoBehaviour
         if (win == true)
         {
             moneyCounter.AddMoneyToCounter();
+            winText.text = string.Format("Good fortune is with you");
             win = false;
         }
     }
