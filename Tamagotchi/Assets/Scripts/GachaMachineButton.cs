@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GachaMachineButton : MonoBehaviour
@@ -8,6 +9,8 @@ public class GachaMachineButton : MonoBehaviour
     public MoneyCounter moneyCounter;
     public GameObject[] prizes;
     public Transform spawnLocation;
+    public GameObject popUp;
+    public GameObject prizeText;
 
     private void Start()
     {
@@ -17,10 +20,18 @@ public class GachaMachineButton : MonoBehaviour
     {
         animator.SetTrigger("wiggle");
 
-        if(moneyCounter.money > 0)
+        if (moneyCounter.money > 0)
         {
-            moneyCounter.DecreaseMoneyToCounter();  
-            Instantiate(prizes[Random.Range(0, prizes.Length)], spawnLocation.position, spawnLocation.rotation);
+            moneyCounter.DecreaseMoneyToCounter();
+            popUp.SetActive(false);
+            prizeText.SetActive(true);
+            Invoke("Spawn", 2f);
         }
+    }
+
+    private void Spawn()
+    {
+        Instantiate(prizes[Random.Range(0, prizes.Length)], spawnLocation.position, spawnLocation.rotation);
+        prizeText.SetActive(false);
     }
 }
