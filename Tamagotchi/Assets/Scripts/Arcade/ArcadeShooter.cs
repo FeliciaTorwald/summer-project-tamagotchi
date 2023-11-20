@@ -7,20 +7,20 @@ public class ArcadeShooter : MonoBehaviour
 
     public GameObject bullet;
     public float moveSpeed = 5.0f;
-    private void Start()
+    public float shootCooldown = 0.5f; // Adjust this value to set the cooldown time
+    private float timeSinceLastShot;
+
+    void Update()
     {
-       
-    }
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time > timeSinceLastShot + shootCooldown)
         {
             Shooting();
+            timeSinceLastShot = Time.time; // Record the time of the last shot
         }
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, verticalInput, 0);
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        Vector3 movement = new Vector3(horizontalInput, 0);
 
         if (movement.magnitude > 1.0f)
         {
@@ -28,10 +28,11 @@ public class ArcadeShooter : MonoBehaviour
         }
 
         transform.Translate(movement * moveSpeed * Time.deltaTime);
-
     }
+
     public void Shooting()
     {
-        Instantiate(bullet,transform.position, transform.rotation);
+        Instantiate(bullet, transform.position, transform.rotation);
     }
+
 }

@@ -7,10 +7,10 @@ public class Bullet : MonoBehaviour
     public float moveSpeed;
     public float rotationSpeed = 100.0f;
     public GameObject explosionPrefab;
+    private PointManager pointManager;
     private void Start()
     {
-        
-        
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();    
     }
     private void Update()
     {
@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(collision.gameObject);
+            pointManager.UpdateScore(50);
             Destroy(gameObject);
         }
 
