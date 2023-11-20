@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed;
+    public float rotationSpeed = 100.0f;
+    public GameObject explosionPrefab;
     private void Start()
     {
         
@@ -12,6 +14,7 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
     }
 
@@ -19,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("hit");
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
