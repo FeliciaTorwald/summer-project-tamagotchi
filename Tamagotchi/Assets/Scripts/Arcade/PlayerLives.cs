@@ -8,6 +8,7 @@ public class PlayerLives : MonoBehaviour
     public int lives = 3;
     public Image[] livesUI;
     public GameObject explosion;
+    public bool died;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,11 @@ public class PlayerLives : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D (Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.collider.gameObject.tag == "Enemy")
+            if(collision.gameObject.tag == "Enemy")
             {
-                Destroy(collision.collider.gameObject);
+                Destroy(collision.gameObject);
                 lives -= 1;
             for(int i = 0; i < livesUI.Length; i++)
             {
@@ -40,13 +41,16 @@ public class PlayerLives : MonoBehaviour
                 {
                 explosion.SetActive(true);
                 GetComponent<SpriteRenderer>().enabled = false;   
+                died = true;
                 Invoke("Die", 0.5f);
                 }
 
             }
         }
+
     public void Die()
     {
         Destroy(gameObject);
+
     }
 }

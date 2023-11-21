@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Instantiate(explosionPrefab, transform.position,Quaternion.identity);
             Destroy(collision.gameObject);
             pointManager.UpdateScore(50);
             Destroy(gameObject);

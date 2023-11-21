@@ -9,6 +9,7 @@ TagManager:
   - Teddy
   - Enemy
   - Barrier
+  - DeathZone
   layers:
   - Default
   - TransparentFX

@@ -23,8 +23,6 @@ public class MoneyCounter : MonoBehaviour
         if(flying)
         {
             GameObject spawnedCoin = Instantiate(coin);
-
-
         }
     }
     public void AddMoneyToCounter()
