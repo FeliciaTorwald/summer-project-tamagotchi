@@ -55,6 +55,7 @@ public class MinigameHandler : MonoBehaviour
     public void MainScene()
     {
      SceneManager.LoadScene("MainScene");
+     MusicManager.Instance.PlaySong();
     }
     public void ArcadeGame()
     {
