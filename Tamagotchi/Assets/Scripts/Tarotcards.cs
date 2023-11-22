@@ -93,7 +93,7 @@ public class Tarotcards : MonoBehaviour
         if (win == true)
         {
             moneyCounter.AddMoneyToCounter();
-            winText.text = string.Format("Good fortune is with you");
+            winText.text = string.Format("Good fortune is with you and a coin ;D");
             win = false;
         }
     }

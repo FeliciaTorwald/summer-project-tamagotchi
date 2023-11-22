@@ -21,7 +21,7 @@ public class RandomTextGenerator : MonoBehaviour
     void Start()
     {
         beenRead = new bool[messages.Length];
-        Invoke("Explosion", 0.9f);
+        Invoke("Explosion", 3.9f);
     }
 
     private void Explosion()
