@@ -11,7 +11,7 @@ public class MusicManager : MonoBehaviour
     {
         get { return instance; }
     }
-    private AudioSource audiosource;
+    public AudioSource audiosource;
     public AudioClip[] songs;
     [SerializeField] private float songsPlayed;
     [SerializeField] private bool[] beenPlayed;
@@ -28,7 +28,7 @@ public class MusicManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+            //DontDestroyOnLoad(instance);
         }
         else
             Destroy(this.gameObject);

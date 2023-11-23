@@ -15,7 +15,7 @@ public class Intro : MonoBehaviour
 
     private void HeartAnimation()
     {
-        heart.SetActive(true); ;
+        heart.SetActive(true); 
     }
     private void ChangeToMainScene()
     {

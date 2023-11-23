@@ -55,7 +55,7 @@ public class MinigameHandler : MonoBehaviour
     public void MainScene()
     {
      SceneManager.LoadScene("MainScene");
-     MusicManager.Instance.PlaySong();
+     //MusicManager.ChangeSong(Random.Range(0, MusicManager.songs.Length), true);
     }
     public void ArcadeGame()
     {

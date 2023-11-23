@@ -367,7 +367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180.18, y: -204.7}
+  m_AnchoredPosition: {x: 102.2, y: -204.7}
   m_SizeDelta: {x: 36.14, y: 36.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212239428
@@ -1978,7 +1978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.5, y: -204.7}
+  m_AnchoredPosition: {x: -181.2, y: -204.7}
   m_SizeDelta: {x: 36.14, y: 36.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &758707622
@@ -6031,9 +6031,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1782884137}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ArcadeGame
+      - m_Target: {fileID: 1684158462}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: PauseSong
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6043,9 +6043,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1684158462}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: PauseSong
+      - m_Target: {fileID: 1782884137}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ArcadeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6200,6 +6200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9475368fd0928543976c9a244af7c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiosource: {fileID: 0}
   songs:
   - {fileID: 8300000, guid: 7d2e28bad18a3bc40b6ab7ecd865217f, type: 3}
   - {fileID: 8300000, guid: 4477d11562397254c8af9c44f7f8f36d, type: 3}
@@ -12178,7 +12179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.5, y: -204.7}
+  m_AnchoredPosition: {x: -180.6, y: -204.7}
   m_SizeDelta: {x: 36.14, y: 36.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2058555709

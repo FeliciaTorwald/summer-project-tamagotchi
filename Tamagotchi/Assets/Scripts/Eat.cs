@@ -20,6 +20,10 @@ public class Eat : MonoBehaviour
             Invoke("Yumyum", 3f);
             Destroy(other.gameObject);
             uiHunger.DecreaseHunger();
+            uiHunger.DecreaseHunger();
+            uiHunger.DecreaseHunger();
+            uiHunger.DecreaseHunger();
+            uiHunger.DecreaseHunger();
         }
     }
 }
